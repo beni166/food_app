@@ -25,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
 
         Paginator::useBootstrap();
 
+        
+
 
         ResetPassword::createUrlUsing(function (object $notifiable, string $token) {
             return config('app.url') . "/reset-password/$token?email={$notifiable->getEmailForPasswordReset()}";

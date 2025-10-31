@@ -56,10 +56,6 @@ class regiserController extends Controller
             $validator = Validator::make($request->all(), [
                 'name' => 'required|string',
                 'email' => 'required|email|unique:users,email',
-<<<<<<< HEAD
-=======
-                'profile'=>'nullable',
->>>>>>> 5e5516e (food app)
                 'phone' => 'required|max:8',
                 'password' => 'required|min:4',
             ]);

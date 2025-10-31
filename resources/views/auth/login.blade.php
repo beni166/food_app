@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,32 +18,41 @@
             justify-content: center;
             margin: 0;
         }
+
         .auth-container {
-            background: rgba(255,255,255,0.95);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 1rem;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
             max-width: 1000px;
             width: 100%;
         }
+
         .auth-illustration {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             padding: 2rem;
         }
+
         .auth-illustration img {
             max-width: 80%;
         }
+
         .auth-card {
             padding: 2rem;
         }
-        .toggle-password { cursor: pointer; }
+
+        .toggle-password {
+            cursor: pointer;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="auth-container row">
         <!-- Illustration -->
-        <div class="col-md-6 auth-illustration d-none d-md-flex flex-column align-items-center justify-content-center text-center">
+        <div
+            class="col-md-6 auth-illustration d-none d-md-flex flex-column align-items-center justify-content-center text-center">
             <h2 class="mb-3">Bienvenue !</h2>
             <p class="mb-4">Accédez à toutes vos fonctionnalités en toute sécurité</p>
             <img src="https://illustrations.popsy.co/amber/secure-login.svg" alt="Connexion Sécurisée">
@@ -79,7 +89,9 @@
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Adresse e-mail</label>
-                        <input type="email" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" required placeholder="vous@example.com">
+                        <input type="email" name="email" value="{{ old('email') }}"
+                            class="form-control @error('email') is-invalid @enderror" required
+                            placeholder="vous@example.com">
                         @error('email')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -87,14 +99,17 @@
                     <div class="mb-3">
                         <label class="form-label">Mot de passe</label>
                         <div class="input-group">
-                            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" required placeholder="••••••••">
+                            <input type="password" name="password"
+                                class="form-control @error('password') is-invalid @enderror" required
+                                placeholder="••••••••">
                             <span class="input-group-text toggle-password"><i class="fas fa-eye-slash"></i></span>
                         </div>
                         @error('password')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
                         <div class="text-end mt-1">
-                            <a href="{{ route('password.request') }}" class="text-decoration-none">Mot de passe oublié ?</a>
+                            <a href="{{ route('password.request') }}" class="text-decoration-none">Mot de passe oublié
+                                ?</a>
                         </div>
                     </div>
                     <div class="form-check mb-3">
@@ -108,31 +123,38 @@
                 <form id="register-form" method="POST" action="{{ route('register') }}" class="d-none mt-3">
                     @csrf
                     <div class="mb-3">
-                        <input type="text" name="name" value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror" placeholder="Nom complet" required>
+                        <input type="text" name="name" value="{{ old('name') }}"
+                            class="form-control @error('name') is-invalid @enderror" placeholder="Nom complet" required>
                         @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <input type="email" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" placeholder="Adresse e-mail" required>
+                        <input type="email" name="email" value="{{ old('email') }}"
+                            class="form-control @error('email') is-invalid @enderror" placeholder="Adresse e-mail"
+                            required>
                         @error('email')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <input type="number" name="phone" value="{{ old('phone') }}" class="form-control @error('phone') is-invalid @enderror" placeholder="Téléphone" required>
+                        <input type="number" name="phone" value="{{ old('phone') }}"
+                            class="form-control @error('phone') is-invalid @enderror" placeholder="Téléphone" required>
                         @error('phone')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Mot de passe" required>
+                        <input type="password" name="password"
+                            class="form-control @error('password') is-invalid @enderror" placeholder="Mot de passe"
+                            required>
                         @error('password')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <input type="password" name="password_confirmation" class="form-control" placeholder="Confirmer le mot de passe" required>
+                        <input type="password" name="password_confirmation" class="form-control"
+                            placeholder="Confirmer le mot de passe" required>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">S'inscrire</button>
                 </form>
@@ -179,4 +201,5 @@
     <script src="{{ asset('assets/admin/js/bootstrap.v.5.3.2/bootstrap.bundle.min.js') }}"></script>
 
 </body>
+
 </html>

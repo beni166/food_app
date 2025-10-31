@@ -1,0 +1,85 @@
+.redressed {
+    font-family: cursive;
+}
+
+.serif {
+    font-family: merriweather, serif;
+}
+
+.cc-navbar {
+    background-color: rgba(0, 0, 0, 0.55);
+    font-family: serif;
+    box-shadow: 1px 1px 3px rgba(225, 225, 225, 0.54);
+    z-index: 99;
+}
+
+.cc-navbar .nav-link {
+    border-bottom: 1px solid transparent;
+    transition: padding-bottom .4s ease-in-out, border-color .3s ease;
+}
+
+.cc-navbar .nav-link:hover {
+    padding-bottom: 20px;
+    border-bottom-color: var(--bs-teal);
+}
+
+.banner {
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), center center fixed no-repeat;
+    background-size: cover;
+    height: 800px;
+}
+
+.order-form {
+    height: 500px;
+}
+
+.banner .banner-desc {
+    font-size: 48px;
+    font-weight: 400;
+    color: #fff;
+
+}
+
+.btn-order {
+    color: var(--bs-teal);
+    border-color: var(--bs-teal);
+    transition: 0.5s;
+}
+
+.active-filter-btn {
+    background-color: #e5345b !important;
+    color: #fff !important;
+    border: #e5345b;
+}
+
+.btn-order:hover,
+.btn-order:active {
+    color: #fff;
+    background-color: var(--bs-teal);
+}
+
+.produit {
+    transition: all 0.4s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.produit.hide {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+}
+
+.active-filter-btn {
+    background-color: #0d6efd !important;
+    color: white !important;
+    border-color: #0d6efd !important;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}

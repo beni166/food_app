@@ -81,7 +81,7 @@
                     <h5 class="card-title mb-3">Produits les plus vendus</h5>
                     <ul class="list-unstyled">
                         @php
-                            $maxSold = max($topProducts->pluck('total_sold')->toArray());
+$maxSold = $topProducts->max('total_sold') ?? 0;
                         @endphp
                         @foreach ($topProducts as $product)
                             @php

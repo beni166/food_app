@@ -57,6 +57,7 @@ class regiserController extends Controller
                 'name' => 'required|string',
                 'email' => 'required|email|unique:users,email',
                 'phone' => 'required|max:8',
+                'profile' => 'nullable|string',
                 'password' => 'required|min:4',
             ]);
 

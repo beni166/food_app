@@ -22,10 +22,10 @@
 <body class="sb-nav-fixed">
 
     {{-- navbar --}}
-    @include('admin.layout.inc.navbar')
+    @include('Admin.layout.inc.navbar')
     <div id="layoutSidenav">
         {{-- sidebar --}}
-        @include('admin.layout.inc.sideBar')
+        @include('Admin.layout.inc.sideBar')
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">

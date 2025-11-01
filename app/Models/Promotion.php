@@ -3,7 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\Products;  
+use App\Models\Category; 
 class Promotion extends Model
 {
     protected $fillable = ['titre', 'products_id', 'category_id', 'reduction', 'date_debut', 'date_fin'];
@@ -15,7 +16,7 @@ class Promotion extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(category::class);
     }
 
     public function isActive()

@@ -87,6 +87,9 @@ class ProductController extends Controller
             $file->move("assets/produits/", $fileName);
             $produits->image = "assets/produits/" . $fileName;
         }
+        $produits->image_url = $produits->image
+            ? url('assets/produits/' . $produits->image)
+            : null;
         $produits->save();
         return to_route('admin.Produits.index')->with('message', 'Produits ajouter avec succès');
     }

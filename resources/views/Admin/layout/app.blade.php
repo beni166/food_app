@@ -24,9 +24,10 @@
 
     {{-- navbar --}}
     @include('Admin.layout.inc.navbar')
+    
+    @include('Admin.layout.inc.sideBar')
     <div id="layoutSidenav">
         {{-- sidebar --}}
-        @include('Admin.layout.inc.sideBar')
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">

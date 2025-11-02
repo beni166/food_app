@@ -14,7 +14,7 @@ class Order extends Model
     public function products()
     {
         return $this->belongsToMany(products::class, 'orders_foods')
-            ->withPivot('quantity', 'statut','prix_order' ,'delivery_date')
+            ->withPivot('quantity', 'statut', 'prix_order', 'delivery_date')
             ->withTimestamps();
     }
 
@@ -41,7 +41,7 @@ class Order extends Model
                 $prix = $prix - ($prix * $reduction / 100);
             }
 
-            
+
             // Attachement dans la table pivot
             $order->products()->attach($product->id, [
                 'quantity' => $item['quantity'],

@@ -17,14 +17,14 @@ class Promotion extends Model
         'date_fin'
     ];
 
-    public function product()
+    public function products()
     {
         return $this->belongsTo(Products::class, 'products_id');
     }
 
     public function category()
     {
-        return $this->belongsTo(Category::class, 'category_id');
+        return $this->belongsTo(category::class, 'category_id');
     }
 
     public function isActive()

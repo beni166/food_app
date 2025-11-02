@@ -1,7 +1,6 @@
 <!-- Sidebar Pro -->
 <div id="layoutSidenav_nav">
-    <nav class="sb-sidenav sb-sidenav-dark" id="sidenavAccordion"
-        style="background: linear-gradient(180deg, #1f1f2e 0%, #181824 100%);">
+
         <div class="sb-sidenav-menu">
             <div class="nav">
 
@@ -55,7 +54,6 @@
                     </a>
                 </form>
         </div>
-    </nav>
 </div>
 
 <!-- Style Pro -->

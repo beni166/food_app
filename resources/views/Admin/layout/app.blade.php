@@ -24,10 +24,10 @@
 
     {{-- navbar --}}
     @include('Admin.layout.inc.navbar')
-    
-    @include('Admin.layout.inc.sideBar')
+
     <div id="layoutSidenav">
         {{-- sidebar --}}
+        @include('Admin.layout.inc.sideBar')
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
@@ -43,15 +43,14 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- DataTables JS -->
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"></script>
     <script src="{{ asset('assets/admin/js/datatables-simple-demo.js') }}"></script>
-    <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- Custom scripts -->
     <script src="{{ asset('assets/admin/js/scripts.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/demo/chart-area-demo.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/demo/chart-bar-demo.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 
     <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1080;"></div>

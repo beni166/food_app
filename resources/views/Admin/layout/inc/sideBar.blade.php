@@ -1,6 +1,7 @@
 <!-- Sidebar Pro -->
 <div id="layoutSidenav_nav">
-
+    <nav class="sb-sidenav sb-sidenav-dark" id="sidenavAccordion"
+        style="background: linear-gradient(180deg, #1f1f2e 0%, #181824 100%);">
         <div class="sb-sidenav-menu">
             <div class="nav">
 
@@ -47,13 +48,14 @@
         <!-- Footer -->
         <div class="sb-sidenav-footer text-center py-3" style="background: #11111b; border-top: 1px solid #2c2c3e;">
             <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <a class="dropdown-item text-danger" href="{{ route('logout') }}"
-                       onclick="event.preventDefault(); this.closest('form').submit();">
-                        <i class="fas fa-sign-out-alt me-2"></i> {{ __('Se déconnecter') }}
-                    </a>
-                </form>
+                @csrf
+                <a class="dropdown-item text-danger" href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); this.closest('form').submit();">
+                    <i class="fas fa-sign-out-alt me-2"></i> {{ __('Se déconnecter') }}
+                </a>
+            </form>
         </div>
+    </nav>
 </div>
 
 <!-- Style Pro -->

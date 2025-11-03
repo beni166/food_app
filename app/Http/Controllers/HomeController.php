@@ -21,28 +21,28 @@ class HomeController extends Controller
     /**
      * Display a listing of the resource.
      */
-   public function index(Request $request)
-{
-    $query = products::with('promotion', 'category')->orderByDesc('created_at');
+    public function index(Request $request)
+    {
+        $query = products::with('promotion', 'category')->orderByDesc('created_at');
 
-    // Vérifie s’il y a un texte de recherche
-    if ($request->filled('search')) {
-        $search = $request->input('search');
+        // Vérifie s’il y a un texte de recherche
+        if ($request->filled('search')) {
+            $search = $request->input('search');
 
-        $query->where(function ($q) use ($search) {
-            $q->where('name', 'LIKE', "%{$search}%")
-              ->orWhere('description', 'LIKE', "%{$search}%")
-              ->orWhereHas('category', function ($cat) use ($search) {
-                  $cat->where('name', 'LIKE', "%{$search}%");
-              });
-        });
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'LIKE', "%{$search}%")
+                    ->orWhere('description', 'LIKE', "%{$search}%")
+                    ->orWhereHas('category', function ($cat) use ($search) {
+                        $cat->where('name', 'LIKE', "%{$search}%");
+                    });
+            });
+        }
+
+        $products = $query->get();
+        $categories = category::with('products')->get();
+
+        return view('welcome', compact('categories', 'products'));
     }
-
-    $products = $query->get();
-    $categories = Category::with('products')->get();
-
-    return view('welcome', compact('categories', 'products'));
-}
 
 
     /**

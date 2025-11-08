@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Products;
-use App\Models\Category;
+use App\Models\category;
 
 class Promotion extends Model
 {
